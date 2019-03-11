@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BLM3520_1</string>
+    <string name="app_isim">Adınız</string>
+    <string name="app_soyisim">Soyadınız</string>
+    <string name="app_dogumyeri">Doğum Yeriniz</string>
+    <string name="app_TCKno">T.C. Kimlik Numaranız</string>
+    <string name="app_button">Yolla</string>
+    <string name="title_activity_show">ShowActivity</string>
+</resources>
