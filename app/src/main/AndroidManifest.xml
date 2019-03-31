@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cihan.blm3520_1">
-    <uses-feature android:name="android.hardware.camera2"></uses-feature>
+
+    <uses-feature android:name="android.hardware.camera2" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,6 +23,7 @@
             android:name=".ShowActivity"
             android:label="@string/title_activity_show"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DersActivity"></activity>
     </application>
 
 </manifest>
