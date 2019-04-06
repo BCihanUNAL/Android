@@ -15,13 +15,16 @@ public class DersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ders);
         final ArrayList<Dersler> list = new ArrayList<>();
 
-        list.add(new Dersler("BBG","AA"));
-        list.add(new Dersler("Mat1","AA"));
-        list.add(new Dersler("Fizik","AA"));
-        list.add(new Dersler("Türkçe","AA"));
-        list.add(new Dersler("Mat2","AA"));
+        list.add(new Dersler("Ders İsmi", "Not", "", 0.0f));
 
-        MyAdapter adapter = new MyAdapter(list);
+
+        list.add(new Dersler("BBG", "AA", "80", 44.0f));
+        list.add(new Dersler("Mat1","AA", "50", 51.0f));
+        list.add(new Dersler("Fizik","AA", "60", 46.0f));
+        list.add(new Dersler("Türkçe","AA","40", 65.0f));
+        list.add(new Dersler("Mat2","AA", "50", 48.0f));
+
+        MyAdapter adapter = new MyAdapter(list,DersActivity.this);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(DersActivity.this);

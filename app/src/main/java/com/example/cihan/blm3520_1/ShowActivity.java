@@ -25,7 +25,7 @@ public class ShowActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         TextView tv1 = (TextView)findViewById(R.id.textView);
         TextView tv2 = (TextView)findViewById(R.id.textView2);
         TextView tv3 = (TextView)findViewById(R.id.textView3);
@@ -33,9 +33,11 @@ public class ShowActivity extends AppCompatActivity {
         TextView tv5 = (TextView)findViewById(R.id.textView5);
         TextView tv6 = (TextView)findViewById(R.id.textView6);
         TextView tv7 = (TextView)findViewById(R.id.textView7);
+        final TextView tv8 = (TextView)findViewById(R.id.textView8);
         ImageView iv = (ImageView)findViewById(R.id.resimGos);
         Button b = (Button)findViewById(R.id.ders_gecis);
-        ImageButton ib = findViewById(R.id.telefonAc);
+        ImageButton ib = (ImageButton)findViewById(R.id.telefonAc);
+        ImageButton ib2 = (ImageButton)findViewById(R.id.mailAt);
 
         tele=intent.getStringExtra("telno");
 
@@ -59,6 +61,7 @@ public class ShowActivity extends AppCompatActivity {
         tv5.setText("Doğum Tarihi: "+gun+"/"+ay+"/"+yil);
         tv6.setText("Yaş: "+yas.toString());
         tv7.setText("Telefon Numarası: "+intent.getStringExtra("telno"));
+        tv8.setText("E-Mail Adresi: "+intent.getStringExtra("email"));
         iv.setImageBitmap((Bitmap)intent.getParcelableExtra("foto"));
 
         b.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +79,18 @@ public class ShowActivity extends AppCompatActivity {
                 startActivity(tel);
             }
         });
+
+        ib2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String array[]={intent.getStringExtra("email")};
+                Intent mail = new Intent(Intent.ACTION_SEND);
+                mail.setType("application/octet-stream");
+                mail.putExtra(Intent.EXTRA_EMAIL,array);
+                startActivity(Intent.createChooser(mail,"Send Email"));
+            }
+        });
+
     }
 
 

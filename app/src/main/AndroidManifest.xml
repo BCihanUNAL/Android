@@ -3,16 +3,17 @@
     package="com.example.cihan.blm3520_1">
 
     <uses-feature android:name="android.hardware.camera2" />
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_bayrak"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_bayrak_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +24,15 @@
             android:name=".ShowActivity"
             android:label="@string/title_activity_show"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DersActivity"></activity>
+        <activity android:name=".DersActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DersDetayActivity"></activity>
     </application>
 
 </manifest>
